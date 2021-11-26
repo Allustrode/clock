@@ -1,0 +1,150 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+:root{
+    --x : 50%;
+    --y : 50%;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to right, rgb(185, 185, 185),rgb(124, 124, 124));
+}
+#time_box{
+    height: max-content;
+    min-width: max-content;
+    position: absolute;
+    font-size: 1rem;
+    top: 20%;
+    font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: .4rem 3rem;
+}
+#clock_body{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 30vmax;
+    width: 30vmax;
+    border-radius: 50%;
+    background: linear-gradient(60deg,rgb(204, 204, 204) 30% ,rgb(214, 214, 214) 36%);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+#shine{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 30vmax;
+    width: 30vmax;
+    border-radius: 50%;
+    transition: .8s;
+    background-color: rgba(139, 139, 139, 0.527);
+    overflow: hidden;
+    box-shadow: 5px -5px 18px rgba(51, 51, 51, 0.479),
+                inset 2px -2px 2px rgba(58, 58, 58, 0.411),
+                inset -3px 5px 3px rgba(58, 58, 58, 0.822),
+                3px -2px 8px rgba(44, 44, 44, 0.671);
+}
+#shine::before{
+    content: "";
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    background:linear-gradient(-115deg, rgba(255, 255, 255, 0.11) 20%, rgba(255, 255, 255, 0.235) 46%, rgba(255, 255, 255, 0.0) 60%); 
+}
+#shine::after{
+    content: "";
+    position: absolute;
+    top: calc(var(--y) * 1px - 40% );
+    left: calc(var(--x) * 1px - 40%);
+    height: 80%;
+    width: 80%;
+    border-radius: 50%;
+    opacity: .3;
+    cursor: none;
+    background:radial-gradient( rgb(255, 255, 255), rgba(255, 255, 255, 0.521), transparent 70%);
+}
+#clock_body span{
+    height: calc(15vmax - 1px);
+    width: .1rem;
+    position: absolute;
+    color: chartreuse;
+    text-align: center;
+    transform-origin: bottom;
+    background:linear-gradient(to top,transparent 90%, rgb(128, 128, 128) 96%);
+}
+#mid_circle{
+    height: 1.6vmin;
+    width: 1.6vmin;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    background: radial-gradient(rgb(104, 104, 104) , rgb(189, 189, 189) );
+    box-shadow: 0px 0px 6px rgb(0, 0, 0);
+}
+
+#second{
+    height: 46%;
+    width: .5%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    transform: translate(-50%,-100%);
+    background-color: rgb(189, 0, 0);
+    transform-origin: bottom;
+    transition: .1s linear;
+    box-shadow: 0 0 3px rgb(109, 0, 0);
+}
+#minute{
+    height: 36%;
+    width: 1%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-100%);
+    background-color: rgb(39, 39, 39);
+    transform-origin: bottom;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    box-shadow: 0px 0px 2px rgb(0, 0, 0);
+
+}
+#hour{
+    height: 30%;
+    width: 3%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-100%);
+    background-color: rgb(19, 19, 19);
+    transform-origin: bottom;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2px rgb(0, 0, 0);
+}
+
+@media (min-width:735px) and (max-width:1024px){
+    #time_box{
+        font-size: .8rem;
+    }
+}
+@media (min-width:450px) and (max-width:735px){
+    #time_box{
+        font-size: .6rem;
+    }
+}
+@media (min-width:200px) and (max-width:450px){
+    #time_box{
+        font-size: .5rem;
+    }
+}
